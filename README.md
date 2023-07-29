@@ -36,7 +36,7 @@
 
 <p align="justify">A Formação em SQL com MySQL Server da Oracle está dividido em 5 cursos:</p>
 <ul>
-    <li>SQL com MySQL: manipule e consulte dados</li>
+    <li><strong>SQL com MySQL: manipule e consulte dados</strong></li>
     <li>Consultas SQL: avançando no SQL com MySQL</li>
     <li>Comandos DML: manipulação de dados com MySQL</li>
     <li>Procedures SQL: executando código no MySQL</li>
@@ -60,12 +60,10 @@
 <ul>
     <li><p><strong>Consultas inteligentes para insights valiosos</strong></p>
     <p align="justify">Você irá instalar e aprenderá a trabalhar com o SQL, usando MySQL. Irá converter e formatar dados e gerar relatórios com as principais funções do SQL.Fazendo análises em tempo real, poderá obter informações transformadoras para o seu negócio ou empresa onde trabalha.</p></li>
-    <li>
       <ul>
           <li><i>SQL com MySQL: manipule e consulte dados</i></li>
           <li><i>Consultas SQL: avançando no SQL com MySQL</i></li>
       </ul>
-    </li>
     <li><p><strong>Avançando em manipulação de dados</strong></p>
 </ul>
 
