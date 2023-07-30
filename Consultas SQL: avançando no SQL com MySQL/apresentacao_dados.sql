@@ -34,4 +34,48 @@ SELECT EMBALAGEM, COUNT(*) AS Quantidade FROM tabela_de_produtos GROUP BY EMBALA
 SELECT BAIRRO, SUM(LIMITE_DE_CREDITO) AS LIMITE FROM tabela_de_clientes
     WHERE CIDADE = 'São Paulo' GROUP BY BAIRRO;
 
+-- Aproveitando o exercício do vídeo anterior (maior quantidade vendida) quantos itens de venda existem para o produto '1101035' ?
+SELECT MAX(QUANTIDADE) as 'MAIOR QUANTIDADE' FROM itens_notas_fiscais WHERE CODIGO_DO_PRODUTO = '1101035';
+
+SELECT COUNT(*) FROM itens_notas_fiscais WHERE CODIGO_DO_PRODUTO = '1101035' AND QUANTIDADE = 99;
+
+-- HAVING é uma condição (filtro) que se aplica ao resultado de uma agregação
+
+SELECT ESTADO, SUM(LIMITE_DE_CREDITO) AS SOMA_LIMITE FROM tabela_de_clientes
+    GROUP BY ESTADO
+    HAVING SOMA_LIMITE > 900000;
+    
+SELECT EMBALAGEM, MAX(PRECO_DE_LISTA) AS MAIOR_PRECO, MIN(PRECO_DE_LISTA) AS MENOR_PRECO FROM tabela_de_produtos
+    GROUP BY EMBALAGEM
+    HAVING SUM(PRECO_DE_LISTA) <= 80;
+    
+-- Quais foram os clientes que fizeram mais de 2000 compras em 2016?
+SELECT CPF, COUNT(CPF) AS Qtd_Compra FROM notas_fiscais
+    WHERE YEAR(DATA_VENDA) = 2016
+    GROUP BY CPF
+    HAVING Qtd_Compra > 2000;
+
+-- Classificando resultados
+SELECT NOME_DO_PRODUTO, PRECO_DE_LISTA,
+    CASE
+        WHEN PRECO_DE_LISTA >= 12 THEN 'PRODUTO CARO'
+        WHEN PRECO_DE_LISTA >= 7 AND PRECO_DE_LISTA < 12 THEN 'PRODUTO EM CONTA'
+        ELSE 'PRODUTO BARATO'
+    END AS STATUS_PRECO
+    FROM tabela_de_produtos;
+    
+SELECT EMBALAGEM,
+    CASE
+        WHEN PRECO_DE_LISTA >= 12 THEN 'PRODUTO CARO'
+        WHEN PRECO_DE_LISTA >= 7 AND PRECO_DE_LISTA < 12 THEN 'PRODUTO EM CONTA'
+        ELSE 'PRODUTO BARATO'
+    END AS STATUS_PRECO, AVG(PRECO_DE_LISTA) AS PRECO_MEDIO
+    FROM tabela_de_produtos
+    GROUP BY EMBALAGEM,
+    CASE
+        WHEN PRECO_DE_LISTA >= 12 THEN 'PRODUTO CARO'
+        WHEN PRECO_DE_LISTA >= 7 AND PRECO_DE_LISTA < 12 THEN 'PRODUTO EM CONTA'
+        ELSE 'PRODUTO BARATO'
+    END
+    ORDER BY EMBALAGEM;
 
