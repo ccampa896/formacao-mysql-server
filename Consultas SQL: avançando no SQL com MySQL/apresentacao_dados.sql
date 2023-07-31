@@ -79,3 +79,13 @@ SELECT EMBALAGEM,
     END
     ORDER BY EMBALAGEM;
 
+-- Veja o ano de nascimento dos clientes e classifique-os como: Nascidos antes de 1990 são velhos, nascidos entre 1990 e 1995 são jovens e nascidos depois de 1995 são crianças. Liste o nome do cliente e esta classificação.
+
+SELECT NOME,
+	CASE
+		WHEN YEAR(DATA_DE_NASCIMENTO) < 1990 THEN 'VELHO'
+        WHEN YEAR(DATA_DE_NASCIMENTO) >= 1990 AND YEAR(DATA_DE_NASCIMENTO) < 1995 THEN 'JOVEM'
+        ELSE 'CRIANÇA'
+	END AS Classificacao
+    FROM tabela_de_clientes;
+
