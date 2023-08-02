@@ -88,3 +88,20 @@ SELECT CONCAT('O dia de hoje é ',
 -- Conversão de tipos de dados
 SELECT CONVERT(23.3, CHAR) AS RESULTADO;
 
+/*
+Queremos construir um SQL cujo resultado seja, para cada cliente:
+
+“O cliente João da Silva faturou 120000 no ano de 2016”.
+
+Somente para o ano de 2016.
+*/
+SELECT CONCAT('O cliente ', AUX.NOME_CLIENTE, ' faturou ', AUX.FATURAMENTO, ' no ano de ', AUX.ANO) FROM
+	(SELECT TC.NOME AS NOME_CLIENTE, ROUND(SUM(INF.QUANTIDADE * INF.PRECO)) AS FATURAMENTO, YEAR(NF.DATA_VENDA) AS ANO 
+		FROM itens_notas_fiscais INF
+		INNER JOIN notas_fiscais NF
+		ON INF.NUMERO = NF.NUMERO
+		INNER JOIN tabela_de_clientes TC
+		ON TC.CPF = NF.CPF
+		WHERE YEAR(NF.DATA_VENDA) = 2016
+		GROUP BY TC.NOME, YEAR(NF.DATA_VENDA)) AS AUX;
+
