@@ -59,12 +59,17 @@
 
 <ul>
     <li><p><strong>Consultas inteligentes para insights valiosos</strong></p>
-    <p align="justify">Você irá instalar e aprenderá a trabalhar com o SQL, usando MySQL. Irá converter e formatar dados e gerar relatórios com as principais funções do SQL.Fazendo análises em tempo real, poderá obter informações transformadoras para o seu negócio ou empresa onde trabalha.</p></li>
+    <p align="justify">Instalar e aprender a trabalhar com o SQL, usando MySQL. Irá converter e formatar dados e gerar relatórios com as principais funções do SQL.Fazendo análises em tempo real, poderá obter informações transformadoras para o seu negócio ou empresa onde trabalha.</p></li>
       <ul>
           <li><i>SQL com MySQL: manipule e consulte dados</i></li>
           <li><i>Consultas SQL: avançando no SQL com MySQL</i></li>
       </ul>
     <li><p><strong>Avançando em manipulação de dados</strong></p>
+    <p align="justify">Aprimorar a criação de relatórios significativos, desenvolver tabelas com chaves primárias e estrangeiras, entender o commit e rollback, auto-incremento, padrões e triggers. Depois, já estará na hora de fazer o tratamento de erro corretamente e encapsular o código em funções e stored procedures, aprender a usar os comandos DML, diversas funções que irão facilitar o trabalho na hora de obter dados, usar padrões, e triggers.</p></li>
+      <ul>
+        <li><i>Comandos DML: manipulação de dados com MySQL</i></li>
+      </ul>
+
 </ul>
 
 ###
@@ -77,6 +82,20 @@
     <li>Adicionando dados no banco com o INSERT</li>
     <li>Atualize e apague dados com UPDATE e DELETE</li>
     <li>Estruture suas tabelas com CREATE TABLE e ALTER TABLE</li>
+</ul>
+
+###
+
+<h3 align="left">Curso #2: avançando no SQL com MySQL</h3>
+
+<ul>
+    <li>Pagine seus dados com LIMIT</li>
+    <li>Filtre consultas com HAVING</li>
+    <li>Entenda a diferença entre o LEFT e RIGHT JOIN</li>
+    <li>Saiba usar Sub-Queries</li>
+    <li>Use funções do MySQL</li>
+    <li>Ordene os seus dados usando o ORDER BY</li>
+    <li>Agrupe dados com GROUP BY</li>
 </ul>
 
 ###
